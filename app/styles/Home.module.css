@@ -1,0 +1,9 @@
+/* dragonball-app/app/styles/Home.module.css */
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+}
