@@ -10,12 +10,18 @@ export const getCharacters = async (page: number = 1, limit: number = 12): Promi
     const offset = (page - 1) * limit;
     const response = await axios.get(`${BASE_URL}?limit=${limit}&offset=${offset}`);
     
+    // Ajusta este acceso según la forma real que retorne la API
+    if (!Array.isArray(response.data)) {
+      console.log('Respuesta de la API:', response.data);
+      return [];
+    }
+
     // Adaptar la respuesta a nuestra interfaz Character
     const characters: Character[] = response.data.map((char: any) => ({
-        name: char.name,
-        gender: char.gender,
-        species: char.specie, // Corrección: la API devuelve 'specie' en lugar de 'species'
-        image: char.imageUrl,
+      name: char.name,
+      gender: char.gender,
+      species: char.specie, // Corrección: la API devuelve 'specie' en lugar de 'species'
+      image: char.imageUrl,
     }));
     
     return characters;
