@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { getCharacters } from './lib/dragonball-api';
 import CharacterCard from './components/CharacterCard';
-import { Character } from './interfaces/characters';
+import { Character } from './interfaces/Character';
 import styles from './styles/Home.module.css';
 
 const Home: React.FC = () => {
@@ -15,6 +15,7 @@ const Home: React.FC = () => {
     const fetchData = async () => {
       setIsLoading(true);
       const data = await getCharacters(currentPage);
+      console.log("Data from getCharacters:", data);
       setCharacters(data);
       setIsLoading(false);
     };
