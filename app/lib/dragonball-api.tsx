@@ -1,8 +1,8 @@
 // lib/dragonball-api.ts
 
 import axios from 'axios';
-import { Character, ApiCharacter } from '../interfaces/Character'; // Importa la nueva interfaz
 
+import { Character, ApiCharacter } from '../interfaces/Character'; // Importa la nueva interfaz
 
 const BASE_URL = 'https://dragonball-api.com/api/characters';
 
@@ -13,7 +13,6 @@ export const getCharacters = async (page: number = 1, limit: number = 12): Promi
 
     console.log('API Response:', response.data); // Verifica la estructura de la respuesta
 
-    // Usa ApiCharacter en lugar de any
     const characters: Character[] = response.data.items.map((char: ApiCharacter) => ({
       id: char.id,
       name: char.name,
