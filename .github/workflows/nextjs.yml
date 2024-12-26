@@ -15,8 +15,8 @@ jobs:
 
       - name: Set up Git default identity
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "maximofernandezriera"
+          git config user.email "maxfernandez@gmail.com"
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
