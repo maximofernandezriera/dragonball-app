@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
+// import Head from 'next/head'; // Elimina o comenta esta línea
 import { getCharacters } from './lib/dragonball-api';
 import CharacterCard from './components/CharacterCard';
 import { Character } from './interfaces/Character';
@@ -33,16 +33,13 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Dragon Ball Characters</title>
-      </Head>
       <h1 className={styles.title}>Dragon Ball Characters</h1>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
         <div>
           {characters.map((character) => (
-            <CharacterCard key={character.name} character={character} />
+            <CharacterCard key={character.id} character={character} />
           ))}
         </div>
       )}
