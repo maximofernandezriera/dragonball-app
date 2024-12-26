@@ -28,7 +28,7 @@ jobs:
       # Añade estos pasos para configurar la identidad de Git:
       - name: Configure Git
         run: |
-          git config user.name "GitHub Actions"
+          git config user.name "maximofernandezriera"
           git config user.email "maxfernandez@gmail.com"
 
       - name: Deploy
