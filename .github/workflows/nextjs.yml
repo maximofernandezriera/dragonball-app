@@ -1,35 +1,32 @@
-name: CI Maximo Project Base nextjs
+
+name: CI Pipeline Dragon Ball App Test Main
 
 on:
   push:
     branches:
-      - main
-      - develop
-      - project_base
-  pull_request:
-    branches:
-      - main
+      - main # Actualiza a la rama principal
       - develop
       - project_base
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Actualiza a la última versión de Ubuntu
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18.18.0' # Actualiza a una versión compatible
+        node-version: '20.17.0'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install 
 
-    - name: Run lint
-      run: npm run lint
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+
 
     - name: Run build
       run: npm run build
@@ -37,15 +34,22 @@ jobs:
     - name: Export static site
       run: npm run export
 
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        name: build-artifacts
-        path: out/
+        node-version: '20.17.0'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Export static site
+      run: npm run export
 
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/project_base'
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: ./out
