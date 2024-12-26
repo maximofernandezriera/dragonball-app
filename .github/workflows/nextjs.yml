@@ -1,4 +1,4 @@
-name: CI Pipeline Dragon Ball App Test  
+name: CI Pipeline Dragon Ball App Test Main
 
 on:
   push:
