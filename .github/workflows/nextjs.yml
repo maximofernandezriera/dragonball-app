@@ -1,55 +1,32 @@
-
-name: CI Pipeline Dragon Ball App Test Main
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Actualiza a la rama principal
+      - main  # O master, si tu rama principal es master
       - develop
       - project_base
+      - gh_pages
 
 jobs:
-    runs-on: ubuntu-latest # Actualiza a la última versión de Ubuntu
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20.17.0'
-
-    - name: Install dependencies
-      run: npm install 
-
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Ajusta la versión de Node.js si es necesario
 
-    - name: Run build
-      run: npm run build
+      - name: Install dependencies
+        run: npm install
 
-    - name: Export static site
-      run: npm run export
+      - name: Build
+        run: npm run build
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20.17.0'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build
-
-    - name: Export static site
-      run: npm run export
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: ./out
+      - name: Deploy
+        run: npm run deploy
+        env:
+          CI: true
