@@ -13,4 +13,4 @@ e:I[4835,[],""]
 7:{}
 d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 b:[["$","meta","0",{"charSet":"utf-8"}],["$","link","1",{"rel":"icon","href":"/dragonball-app/favicon.ico","type":"image/x-icon","sizes":"16x16"}]]
-9:null
+9:null 
