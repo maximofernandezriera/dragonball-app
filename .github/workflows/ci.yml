@@ -1,4 +1,4 @@
-name: CI
+name: CI Maximo Project Base
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'
+        node-version: '18.18.0' # Actualiza a una versión compatible
 
     - name: Install dependencies
       run: npm install
@@ -32,16 +32,17 @@ jobs:
       run: npm run lint
 
     - name: Run build
-      run: npm run build
+      run: npm run build 
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
         path: out/
 
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      run: |
-        npm install -g project_base
-        project_base -d out
+      if: github.ref == 'refs/heads/project_base'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
