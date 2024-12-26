@@ -1,4 +1,4 @@
-name: CI Maximo Project Base
+name: CI Maximo Dragon Ball App
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
         path: out/
 
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/project_base'
+      if: github.ref == 'refs/heads/gh_pages'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
