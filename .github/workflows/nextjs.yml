@@ -1,4 +1,4 @@
-name: CI Maximo Dragon Ball App
+name: CI Maximo Project Base nextjs
 
 on:
   push:
@@ -32,7 +32,10 @@ jobs:
       run: npm run lint
 
     - name: Run build
-      run: npm run build 
+      run: npm run build
+
+    - name: Export static site
+      run: npm run export
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
@@ -41,7 +44,7 @@ jobs:
         path: out/
 
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/gh_pages'
+      if: github.ref == 'refs/heads/project_base'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
