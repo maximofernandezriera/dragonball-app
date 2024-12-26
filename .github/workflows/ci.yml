@@ -25,7 +25,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Añade estos pasos para configurar la identidad de Git:
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "maxfernandez@gmail.com"
+
       - name: Deploy
         run: npm run deploy
         env:
-          CI: true # Agrega esta línea
+          CI: true
