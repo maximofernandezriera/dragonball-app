@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+// next.config.js
+module.exports = {
+  output: 'export', // Agrega esta línea
+  // ... otras configuraciones (si las tienes)
+  images: {
+    unoptimized: true,
+  }
+}
