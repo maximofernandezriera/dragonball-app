@@ -34,8 +34,8 @@ export default function RootLayout({
         <nav>
           <ul>
             <li>
-              <Link href="/pages">
-                <a>Pages</a>
+              <Link href="/page">
+                <a>Dragon ball app</a>
               </Link>
             </li>
           </ul>
