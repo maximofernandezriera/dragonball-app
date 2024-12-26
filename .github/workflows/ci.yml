@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - project_base
 
 jobs:
   build-and-deploy:
