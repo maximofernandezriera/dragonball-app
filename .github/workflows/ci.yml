@@ -1,9 +1,10 @@
-name: Deploy to GitHub Pages.2
+name: Deploy to GitHub Pages using GitHub Actions
 
 on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   build-and-deploy:
