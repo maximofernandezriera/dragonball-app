@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh_pages -d out"
+    "deploy": "project_base -d out"
   },
   "dependencies": {
     "next": "15.1.2",
