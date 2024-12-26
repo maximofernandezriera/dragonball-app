@@ -6,6 +6,7 @@ on:
       - main  # O master, si tu rama principal es master
       - develop
       - project_base
+      - gh_pages
 
 jobs:
   build-and-deploy:
