@@ -1,14 +1,14 @@
-name: CI Pipeline Dragon Ball App
+name: CI Pipeline Dragon Ball App Test  
 
 on:
   push:
     branches:
-      - main
+      - main # Actualiza a la rama principal
       - develop
       - project_base
 
 jobs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Actualiza a la última versión de Ubuntu
 
     steps:
     - name: Checkout repository
@@ -20,7 +20,7 @@ jobs:
         node-version: '20.17.0'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install 
 
   deploy:
     runs-on: ubuntu-latest
