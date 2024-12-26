@@ -1,11 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: 'export', // Agrega esta línea
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
   images: {
     unoptimized: true,
   },
-  /* otras opciones de configuración aquí */
+  basePath: '/dragonball-app', // Reemplaza 'dragonball-app' con el nombre de tu repositorio
+  assetPrefix: '/dragonball-app/', // Reemplaza 'dragonball-app' con el nombre de tu repositorio
+  // ... otras configuraciones (si las tienes)
 };
 
-export default nextConfig;
+module.exports = nextConfig;
