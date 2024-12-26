@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - develop
+      - project_base
   pull_request:
     branches:
       - main
       - develop
+      - project_base
 
 jobs:
   build:
@@ -41,5 +43,5 @@ jobs:
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
       run: |
-        npm install -g gh-pages
-        gh-pages -d out
+        npm install -g project_base
+        project_base -d out
