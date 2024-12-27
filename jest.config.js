@@ -9,15 +9,11 @@ const createJestConfig = nextJest({
 });
 
 const customJestConfig = {
-  // Define el entorno de test como 'jsdom' (navegador simulado)
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   testEnvironment: 'jest-environment-jsdom',
-  // Especifica el archivo o archivos que se ejecutarán antes de las pruebas
-  setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.js'],
-  // Opcional: Ignorar transformaciones de ficheros estáticos, CSS, etc.
   moduleNameMapper: {
-    // Mapea imports de CSS
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
-    // Eliminada la referencia a imágenes
+    '^@/(.*)$': '<rootDir>/$1', // Si usas alias de ruta
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy', // Mapea imports de CSS
   },
 };
 

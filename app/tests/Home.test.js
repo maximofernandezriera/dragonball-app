@@ -1,17 +1,11 @@
-/**
- * tests/Home.test.js
- * Test de ejemplo que verifica si la página Home 
- * renderiza correctamente un heading.
- */
 import { render, screen } from '@testing-library/react';
-import Home from '../app/page';
+import '@testing-library/jest-dom/extend-expect'; // Asegúrate de importar jest-dom
+import Home from '../page';
 
 describe('Home page', () => {
-  it('renders a heading', () => {
+  it('renders the Next.js logo', () => {
     render(<Home />);
-    const heading = screen.getByRole('heading', {
-      name: /Dragon Ball Characters/i,
-    });
-    expect(heading).toBeInTheDocument();
+    const logo = screen.getByAltText('Next.js logo');
+    expect(logo).toBeInTheDocument();
   });
 });
