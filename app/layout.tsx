@@ -34,7 +34,7 @@ export default function RootLayout({
           <ul>
             <li>
               <Link href="/pages">
-                <a>Pages</a>
+                <a>Dragon Ball App</a>
               </Link>
             </li>
           </ul>
