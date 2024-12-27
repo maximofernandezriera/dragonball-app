@@ -10,7 +10,7 @@ const createJestConfig = nextJest({
 
 const customJestConfig = {
   // Define el entorno de test como 'jsdom' (navegador simulado)
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   // Especifica el archivo o archivos que se ejecutarán antes de las pruebas
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.js'],
   // Opcional: Ignorar transformaciones de ficheros estáticos, CSS, etc.
