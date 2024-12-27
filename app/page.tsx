@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { getCharacters } from './lib/dragonball-api';
 import CharacterCard from './components/CharacterCard';
 import { Character } from './interfaces/Character';
 import styles from './styles/Home.module.css';
+import HamburgerMenu from './components/HamburgerMenu';
 
 const Home: React.FC = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -28,7 +30,7 @@ const Home: React.FC = () => {
   };
 
   const handlePreviousPage = () => {
-    setCurrentPage((prevPage) => (prevPage === 1 ? 1 : prevPage - 1));
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
   return (
@@ -36,20 +38,21 @@ const Home: React.FC = () => {
       <Head>
         <title>Dragon Ball Characters</title>
       </Head>
-      <h1 className={styles.title}>Dragon Ball Characters</h1>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          {characters.map((character) => (
-            <CharacterCard key={character.name} character={character} />
-          ))}
-        </div>
-      )}
-      <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-        Previous
-      </button>
-      <button onClick={handleNextPage}>Next Page</button>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Dragon Ball Characters</h1>
+        <HamburgerMenu />
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          characters.map((character) => (
+            <CharacterCard key={character.id} character={character} />
+          ))
+        )}
+        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+          Previous Page
+        </button>
+        <button onClick={handleNextPage}>Next Page</button>
+      </main>
     </div>
   );
 };
