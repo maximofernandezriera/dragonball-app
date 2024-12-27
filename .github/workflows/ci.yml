@@ -1,63 +1,35 @@
 # File: .github/workflows/ci.yml
-name: Nextjs Pipeline NEXTJS DRAGON BALL # Cambia el nombre del pipeline
+name: Deploy to GitHub Pages CI DRAGON BALL
 
 on:
   push:
     branches:
       - project_base
-      - gh-pages
+
+permissions:
+  contents: write
 
 jobs:
-  # Job para test
-  test:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run unit tests
-        # Ajusta 'npm run test' según tu script o framework de tests
-        run: npm run test
-
-  # Job para desplegar en GitHub Pages
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    # Sólo ejecuta este job cuando la referencia actual es la rama 'main'
-    if: ${{ github.ref == 'refs/heads/main' }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
+      - name: Build
         run: npm run build
 
-      - name: Export project
-        run: npm run export
-
       - name: Deploy to GitHub Pages
+        if: ${{ github.ref == 'refs/heads/project_base' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # Opción 1: Usar un token personal si lo has creado (GH_TOKEN)
-          # github_token: ${{ secrets.GH_TOKEN }}
-          #
-          # Opción 2: Usar el token integrado de GitHub (GITHUB_TOKEN)
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
