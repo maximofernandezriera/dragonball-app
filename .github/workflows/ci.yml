@@ -1,11 +1,11 @@
 # File: .github/workflows/ci.yml
-name: CI Pipeline
+name: Nextjs Pipeline NEXTJS DRAGON BALL # Cambia el nombre del pipeline
 
 on:
   push:
     branches:
-      - main
-      - develop
+      - project_base
+      - gh-pages
 
 jobs:
   # Job para test
