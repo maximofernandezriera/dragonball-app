@@ -1,0 +1,15 @@
+{
+    "totalCharacters": 60,
+    "species": [
+      { "name": "Saiyan", "count": 15 },
+      { "name": "Human", "count": 10 },
+      { "name": "Namekian", "count": 5 },
+      { "name": "Android", "count": 5 },
+      { "name": "Frieza Race", "count": 15 },
+      { "name": "Other", "count": 10 }
+    ],
+    "gender": {
+      "Male": 45,
+      "Female": 15
+    }
+  }

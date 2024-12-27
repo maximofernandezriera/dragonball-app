@@ -1,4 +1,3 @@
-// filepath: /home/maximo/github_copilot/dragonball-app/app/page.tsx
 "use client";
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -42,6 +41,28 @@ const Page: React.FC = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Dragon Ball Characters</h1>
         <HamburgerMenu />
+        <nav>
+          <ul>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/favorites">Favorites</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link href="/calendar">Calendar</Link>
+            </li>
+            <li>
+              <Link href="/faq">FAQ</Link>
+            </li>
+            <Link href="/statistics">
+              <button>View Statistics</button>
+            </Link>
+          </ul>
+        </nav>
         {isLoading ? (
           <p>Loading...</p>
         ) : (
