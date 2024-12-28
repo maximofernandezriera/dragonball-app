@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/maximo/github_copilot/dragonball-app/app/layout.tsx"],"sourcesContent":["import React from 'react';\n\ninterface RootLayoutProps {\n  children: React.ReactNode;\n}\n\nconst RootLayout: React.FC<RootLayoutProps> = ({ children }) => {\n  return (\n    <html lang=\"en\">\n      <head>\n        <title>Dragon Ball App</title>\n      </head>\n      <body>\n        {children}\n      </body>\n    </html>\n  );\n};\n\nexport default RootLayout;"],"names":[],"mappings":";;;;;AAMA,MAAM,aAAwC,CAAC,EAAE,QAAQ,EAAE;IACzD,qBACE,8OAAC;QAAK,MAAK;;0BACT,8OAAC;0BACC,cAAA,8OAAC;8BAAM;;;;;;;;;;;0BAET,8OAAC;0BACE;;;;;;;;;;;;AAIT;uCAEe"}},
+    {"offset": {"line": 44, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":["file:///home/maximo/github_copilot/dragonball-app/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-rsc'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,0HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0]}},
+    {"offset": {"line": 57, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
