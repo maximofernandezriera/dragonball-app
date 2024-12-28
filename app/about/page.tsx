@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className={styles.hero}>
           <h1 className={styles.title}>About DragonBall World</h1>
           <p className={styles.subtitle}>Learn more about the ultimate Dragon Ball fan site!</p>
-          <img src="/about-banner.jpg" alt="About Dragon Ball Banner" className={styles.banner} />
+          <img src="f.jpg" alt="About Dragon Ball Banner" className={styles.banner} />
         </div>
         <section className={styles.content}>
           <h2>Our Mission</h2>
