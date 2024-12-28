@@ -167,7 +167,7 @@ const CharactersPage: React.FC = () => {
         <div className={styles.hero}>
           <h1 className={styles.title}>Dragon Ball Characters</h1>
           <p className={styles.subtitle}>Meet the characters of Dragon Ball.</p>
-          <img src="/characters-banner.jpg" alt="Characters Banner" className={styles.banner} />
+          <img src="f.jpg" alt="Characters Banner" className={styles.banner} />
         </div>
         <section className={styles.content}>
           {selectedCharacters.map((character) => (
