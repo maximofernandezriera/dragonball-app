@@ -18,9 +18,6 @@ const HamburgerMenu: React.FC = () => {
             <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/calendar">Calendar</Link>
-          </li>
-          <li>
             <Link href="/faq">FAQ</Link>
           </li>
         </ul>
