@@ -72,7 +72,7 @@ const FaqPage: React.FC = () => {
         <div className={styles.hero}>
           <h1 className={styles.title}>Preguntas Frecuentes</h1>
           <p className={styles.subtitle}>Encuentra respuestas a las preguntas más comunes sobre Dragon Ball.</p>
-          <img src="/faq-banner.jpg" alt="FAQ Banner" className={styles.banner} />
+          <img src="f.jpg" alt="FAQ Banner" className={styles.banner} />
         </div>
         <section className={styles.content}>
           {selectedFaqs.map((faq, index) => (
