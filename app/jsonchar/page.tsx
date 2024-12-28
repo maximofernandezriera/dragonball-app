@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import HamburgerMenu from "../components/HamburgerMenu";
+import Filter from "../components/Filter";
 import styles from "../styles/Characters.module.css";
 
 const charactersData = {
@@ -144,6 +145,7 @@ const charactersData = {
 
 const CharactersPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [filter, setFilter] = useState("");
   const itemsPerPage = 3;
 
   const handleNextPage = () => {
@@ -154,8 +156,17 @@ const CharactersPage: React.FC = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
+  const handleFilterChange = (filter: string) => {
+    setFilter(filter);
+    setCurrentPage(1); // Reset to first page when filter changes
+  };
+
+  const filteredCharacters = charactersData.items.filter((character) =>
+    filter ? character.race === filter : true
+  );
+
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const selectedCharacters = charactersData.items.slice(startIndex, startIndex + itemsPerPage);
+  const selectedCharacters = filteredCharacters.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <>
@@ -169,6 +180,7 @@ const CharactersPage: React.FC = () => {
           <p className={styles.subtitle}>Meet the characters of Dragon Ball.</p>
           <img src="f.jpg" alt="Characters Banner" className={styles.banner} />
         </div>
+        <Filter onFilterChange={handleFilterChange} />
         <section className={styles.content}>
           {selectedCharacters.map((character) => (
             <div key={character.id} className={styles.characterCard}>
@@ -186,7 +198,7 @@ const CharactersPage: React.FC = () => {
           <button onClick={handlePreviousPage} disabled={currentPage === 1}>
             Previous Page
           </button>
-          <button onClick={handleNextPage} disabled={startIndex + itemsPerPage >= charactersData.items.length}>
+          <button onClick={handleNextPage} disabled={startIndex + itemsPerPage >= filteredCharacters.length}>
             Next Page
           </button>
         </div>
