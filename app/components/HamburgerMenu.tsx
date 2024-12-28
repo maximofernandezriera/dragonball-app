@@ -8,6 +8,9 @@ const HamburgerMenu: React.FC = () => {
     <div className={styles.hamburgerMenu}>
       <nav className={styles.navMenu}>
         <ul>
+        <li>
+            <Link href="/characters">Characters</Link>
+          </li>
           <li>
             <Link href="/about">About</Link>
           </li>

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; // Asegúrate de importar jest-dom
-import Home from '../page';
+import Home from '../characters/page';
 
 describe('Home page', () => {
   it('renders the Next.js logo', () => {
