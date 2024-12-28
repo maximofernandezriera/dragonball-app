@@ -5,5 +5,6 @@
   "/contact/page": "app/contact/page.js",
   "/faq/page": "app/faq/page.js",
   "/favorites/page": "app/favorites/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/stadistics/page": "app/stadistics/page.js"
 }
