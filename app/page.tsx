@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className={styles.hero}>
           <h1 className={styles.title}>Hello DragonBall World</h1>
           <p className={styles.subtitle}>Welcome to the ultimate Dragon Ball fan site!</p>
-          <img src="/f.jpg" alt="Dragon Ball Banner" className={styles.banner} />
+          <img src="f.jpg" alt="Dragon Ball Banner" className={styles.banner} />
         </div>
         <section className={styles.features}>
           <div className={styles.feature}>
