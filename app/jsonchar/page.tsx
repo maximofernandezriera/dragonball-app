@@ -178,7 +178,6 @@ const CharactersPage: React.FC = () => {
         <div className={styles.hero}>
           <h1 className={styles.title}>Dragon Ball Characters</h1>
           <p className={styles.subtitle}>Meet the characters of Dragon Ball.</p>
-          <img src="f.jpg" alt="Characters Banner" className={styles.banner} />
         </div>
         <Filter onFilterChange={handleFilterChange} />
         <section className={styles.content}>
