@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import HamburgerMenu from "../components/HamburgerMenu";
 import styles from "../styles/Faq.module.css";
@@ -48,6 +48,20 @@ const faqs = [
 ];
 
 const FaqPage: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const selectedFaqs = faqs.slice(startIndex, startIndex + itemsPerPage);
+
   return (
     <>
       <Head>
@@ -58,16 +72,24 @@ const FaqPage: React.FC = () => {
         <div className={styles.hero}>
           <h1 className={styles.title}>Preguntas Frecuentes</h1>
           <p className={styles.subtitle}>Encuentra respuestas a las preguntas más comunes sobre Dragon Ball.</p>
-          <img src="f.jpg" alt="FAQ Banner" className={styles.banner} />
+          <img src="/faq-banner.jpg" alt="FAQ Banner" className={styles.banner} />
         </div>
         <section className={styles.content}>
-          {faqs.map((faq, index) => (
+          {selectedFaqs.map((faq, index) => (
             <div key={index} className={styles.faqItem}>
               <h2>{faq.question}</h2>
               <p>{faq.answer}</p>
             </div>
           ))}
         </section>
+        <div className={styles.pagination}>
+          <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+            Previous Page
+          </button>
+          <button onClick={handleNextPage} disabled={startIndex + itemsPerPage >= faqs.length}>
+            Next Page
+          </button>
+        </div>
       </main>
     </>
   );
