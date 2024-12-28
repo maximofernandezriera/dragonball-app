@@ -45,3 +45,20 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
 Una vez que la aplicación esté en funcionamiento, puedes acceder a ella mediante tu navegador en `http://localhost:3000`. Navega a través de las diferentes secciones para explorar la información sobre los personajes y episodios de Dragon Ball.
 
 ## Estructura del Proyecto
+
+```plaintext
+dragonball-app/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── public/
+│   ├── index.html
+│   └── ...
+├── .gitignore
+├── package.json
+├── README.md
+└── ...
