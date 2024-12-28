@@ -7,9 +7,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    turbo: false, // Deshabilita Turbopack
-  },
 };
 
 module.exports = nextConfig;
