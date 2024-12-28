@@ -3,6 +3,7 @@ import React from "react";
 import Head from "next/head";
 import HamburgerMenu from "../components/HamburgerMenu";
 import styles from "../styles/About.module.css";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -15,7 +16,13 @@ export default function AboutPage() {
         <div className={styles.hero}>
           <h1 className={styles.title}>About DragonBall World</h1>
           <p className={styles.subtitle}>Learn more about the ultimate Dragon Ball fan site!</p>
-          <img src="f.jpg" alt="About Dragon Ball Banner" className={styles.banner} />
+          <Image
+            src="f.jpg"
+            alt="About Dragon Ball Banner"
+            className={styles.banner}
+            width={800}
+            height={400}
+          />
         </div>
         <section className={styles.content}>
           <h2>Our Mission</h2>

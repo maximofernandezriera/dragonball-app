@@ -4,6 +4,7 @@ import Head from "next/head";
 import HamburgerMenu from "../components/HamburgerMenu";
 import Filter from "../components/Filter";
 import styles from "../styles/Characters.module.css";
+import Image from "next/image";
 
 const charactersData = {
   items: [
@@ -183,7 +184,13 @@ const CharactersPage: React.FC = () => {
         <section className={styles.content}>
           {selectedCharacters.map((character) => (
             <div key={character.id} className={styles.characterCard}>
-              <img src={character.image} alt={character.name} className={styles.characterImage} />
+              <Image
+                src={character.image}
+                alt={character.name}
+                className={styles.characterImage}
+                width={300}
+                height={300}
+              />
               <h2>{character.name}</h2>
               <p><strong>Race:</strong> {character.race}</p>
               <p><strong>Gender:</strong> {character.gender}</p>

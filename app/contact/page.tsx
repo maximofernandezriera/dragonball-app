@@ -3,6 +3,7 @@ import React from "react";
 import Head from "next/head";
 import HamburgerMenu from "../components/HamburgerMenu";
 import styles from "../styles/Contact.module.css";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -14,8 +15,14 @@ export default function ContactPage() {
         <HamburgerMenu />
         <div className={styles.hero}>
           <h1 className={styles.title}>Contact Us</h1>
-          <p className={styles.subtitle}>We'd love to hear from you! Fill out the form below to get in touch.</p>
-          <img src="/contact-banner.jpg" alt="Contact Banner" className={styles.banner} />
+          <p className={styles.subtitle}>We&apos;d love to hear from you! Fill out the form below to get in touch.</p>
+          <Image
+            src="f.jpg"
+            alt="Contact Banner"
+            className={styles.banner}
+            width={800}
+            height={400}
+          />
         </div>
         <section className={styles.content}>
           <form className={styles.contactForm}>

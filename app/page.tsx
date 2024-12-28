@@ -3,6 +3,7 @@ import React from "react";
 import Head from "next/head";
 import HamburgerMenu from "./components/HamburgerMenu";
 import styles from "./styles/Home.module.css";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -15,7 +16,13 @@ export default function HomePage() {
         <div className={styles.hero}>
           <h1 className={styles.title}>Hello DragonBall World</h1>
           <p className={styles.subtitle}>Welcome to the ultimate Dragon Ball fan site!</p>
-          <img src="f.jpg" alt="Dragon Ball Banner" className={styles.banner} />
+          <Image
+            src="f.jpg"
+            alt="Dragon Ball Banner"
+            className={styles.banner}
+            width={800}
+            height={400}
+          />
         </div>
         <section className={styles.features}>
           <div className={styles.feature}>
