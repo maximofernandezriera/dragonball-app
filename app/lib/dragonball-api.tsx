@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Character } from '../interfaces/Character';
+import { Character, ApiCharacter } from '../interfaces/Character';
 
 const BASE_URL = 'https://dragonball-api.com/api/characters';
 
@@ -15,7 +15,7 @@ export const getCharacters = async (page: number, limit: number = 6): Promise<Ch
       return [];
     }
 
-    return response.data.items.map((char: any) => ({
+    return response.data.items.map((char: ApiCharacter) => ({
       id: char.id,
       name: char.name,
       race: char.race,
