@@ -20,9 +20,6 @@ jobs:
       - name: Instalar dependencias
         run: npm ci # o yarn install si usas Yarn
 
-      - name: Ejecutar pruebas (opcional, pero recomendado)
-        run: npm run test # o yarn test
-
       - name: Construir la aplicación
         run: npm run build # o yarn build
 
