@@ -43,14 +43,18 @@ const Page: React.FC = () => {
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          characters.map((character) => (
-            <CharacterCard key={character.id} character={character} />
-          ))
+          <div className={styles.grid}>
+            {characters.map((character) => (
+              <CharacterCard key={character.id} character={character} />
+            ))}
+          </div>
         )}
-        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          Previous Page
-        </button>
-        <button onClick={handleNextPage}>Next Page</button>
+        <div className={styles.pagination}>
+          <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+            Previous Page
+          </button>
+          <button onClick={handleNextPage}>Next Page</button>
+        </div>
       </main>
     </div>
   );
