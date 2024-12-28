@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { getCharacters } from '../lib/dragonball-api';
 import CharacterCard from '../components/CharacterCard';
 import { Character } from '../interfaces/Character';
-import styles from './styles/Home.module.css';
+import styles from '../styles/Home.module.css';
 import HamburgerMenu from '../components/HamburgerMenu';
 
 const Page: React.FC = () => {
