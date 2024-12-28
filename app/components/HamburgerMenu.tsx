@@ -19,7 +19,7 @@ const HamburgerMenu: React.FC = () => {
         <nav className={styles.navMenu}>
           <ul>
             <li>
-              <Link href="/characters">Characters</Link>
+              <Link href="/jsonchar">Characters</Link>
             </li>
             <li>
               <Link href="/about">About</Link>
