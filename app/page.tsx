@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+// Elimina la importación de Link si no se está utilizando
+// import Link from 'next/link';
 import { getCharacters } from './lib/dragonball-api';
 import CharacterCard from './components/CharacterCard';
 import { Character } from './interfaces/Character';

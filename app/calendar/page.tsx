@@ -1,16 +1,9 @@
 "use client";
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 export default function CalendarPage() {
-  const [date, setDate] = useState<Date | Date[]>(new Date());
-
-  const onChange = (value: Date | Date[] | null, event: React.MouseEvent<HTMLButtonElement>) => {
-    if (value !== null) {
-      setDate(value);
-    }
-  };
+  const [date] = useState<Date | Date[]>(new Date());
 
   return (
     <div>

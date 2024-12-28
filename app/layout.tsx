@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+
+// Elimina la importación de Metadata si no se está utilizando
+// import type { Metadata } from "next";
 
 const roboto = Roboto({
   variable: "--font-roboto",

@@ -1,8 +1,16 @@
 export interface Character {
-  id: number;
+  id: string;
   name: string;
   race: string;
-  ki: string;
-  maxKi: string;
-  imageUrl?: string; // si la API la devuelve
+  ki: number;
+  maxKi: number;
+  imageUrl: string;
+}
+
+export interface ApiCharacter {
+  id: string;
+  name: string;
+  gender: string;
+  specie: string;
+  imageUrl: string;
 }
